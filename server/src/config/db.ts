@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 
 export const connectDB = async () => {
     try {
-        const mongodbUri = process.env.MONGODB_URI;
+        
+        const mongodbUri = "mongodb://localhost:27017/db_login";
 
         if (!mongodbUri) {
             throw new Error("MONGODB_URI is not defined in the environment variables.");

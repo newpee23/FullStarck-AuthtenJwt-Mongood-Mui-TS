@@ -43,7 +43,7 @@ export const loginUser = async (req: Request<UserRegister>, res: Response<UserLo
 
         const { username, password }: UserRegister = req.body;
         // Check User
-        const user: IUser | null = await User.findOneAndUpdate({ username, status: true }, { new: true });
+        const user: IUser | null = await User.findOne({ username, status: true });
 
             // status = true
             if(user && user.status){
